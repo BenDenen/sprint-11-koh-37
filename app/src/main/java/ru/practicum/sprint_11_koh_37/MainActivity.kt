@@ -15,7 +15,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-import ru.practicum.sprint_11_koh_31.R
+import ru.practicum.sprint_11_koh_37.R
 import java.util.Date
 
 class MainActivity : AppCompatActivity() {
@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
                 GsonConverterFactory.create(
                     GsonBuilder()
                         .registerTypeAdapter(Date::class.java, CustomDateTypeAdapter())
+                        .registerTypeAdapter(NewsItem::class.java,NewsDeserializer())
                         .create()
                 )
             )
